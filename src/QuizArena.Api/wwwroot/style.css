@@ -1,0 +1,40 @@
+:root {
+  --bg: #14101f;
+  --panel: #221b36;
+  --text: #f1efff;
+  --muted: #a89fd1;
+  --accent: #c084fc;
+  --gold: #fbbf24;
+  --good: #34d399;
+  --bad: #f87171;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid #372d55; }
+header h1 { margin: 0; color: var(--accent); letter-spacing: 1px; }
+.status { color: var(--muted); font-size: 0.85rem; }
+.status.ok { color: var(--good); }
+main { max-width: 720px; margin: 0 auto; padding: 1.5rem; }
+.panel { background: var(--panel); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.25rem; }
+.panel h2 { margin-top: 0; }
+.hidden { display: none !important; }
+form { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.25rem; }
+label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.9rem; color: var(--muted); }
+input, select { background: var(--bg); border: 1px solid #372d55; color: var(--text); border-radius: 8px; padding: 0.6rem; font-size: 1rem; }
+button { background: var(--accent); color: #14101f; border: none; border-radius: 8px; padding: 0.7rem; font-weight: 700; font-size: 1rem; cursor: pointer; }
+button.primary { background: var(--gold); margin-top: 1rem; }
+.error { color: var(--bad); }
+.hint { color: var(--muted); font-size: 0.9rem; }
+.code { font-size: 1.6rem; letter-spacing: 4px; color: var(--gold); }
+ul, ol { padding-left: 1.25rem; }
+.qhead { display: flex; justify-content: space-between; color: var(--muted); margin-bottom: 0.4rem; }
+.timerbar { background: var(--bg); border-radius: 6px; height: 8px; overflow: hidden; margin-bottom: 1rem; }
+#timerFill { height: 100%; background: var(--gold); width: 100%; }
+.options { display: grid; gap: 0.6rem; margin-top: 1rem; }
+.options button { background: var(--bg); color: var(--text); border: 2px solid #372d55; text-align: left; }
+.options button:hover:not(:disabled) { border-color: var(--accent); }
+.options button.correct { border-color: var(--good); background: #12352a; }
+.options button.wrong { border-color: var(--bad); background: #3d1a1a; }
+.options button:disabled { cursor: default; opacity: 0.9; }
+#board li, #finalBoard li { margin-bottom: 0.3rem; }
+#finalBoard li:first-child { color: var(--gold); font-weight: 700; }

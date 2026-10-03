@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuizArena — Realtime Multiplayer Quiz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>QuizArena</h1><div id="connStatus" class="status">connecting…</div></header>
+
+<main>
+  <!-- Lobby -->
+  <section id="lobbyView" class="panel">
+    <h2>Create a room</h2>
+    <form id="createForm">
+      <label>Room name <input id="roomName" maxlength="60" required value="Friday Night Quiz"></label>
+      <label>Your name <input id="hostName" maxlength="40" required placeholder="Host"></label>
+      <label>Question set <select id="setSelect"></select></label>
+      <button type="submit">Create room</button>
+    </form>
+    <h2>…or join one</h2>
+    <form id="joinForm">
+      <label>Room code <input id="joinCode" maxlength="6" required placeholder="ABC123" style="text-transform:uppercase"></label>
+      <label>Your name <input id="joinName" maxlength="40" required placeholder="Player"></label>
+      <button type="submit">Join room</button>
+    </form>
+    <p id="lobbyError" class="error"></p>
+  </section>
+
+  <!-- Waiting room -->
+  <section id="waitingView" class="panel hidden">
+    <h2 id="waitTitle"></h2>
+    <p>Share this code: <strong id="roomCodeBig" class="code"></strong></p>
+    <h3>Players</h3>
+    <ul id="playerList"></ul>
+    <button id="startBtn" class="hidden primary">Start game</button>
+    <p class="hint">Waiting for the host to start…</p>
+  </section>
+
+  <!-- Game -->
+  <section id="gameView" class="panel hidden">
+    <div class="qhead"><span id="qCounter"></span><span id="qTimer"></span></div>
+    <div class="timerbar"><div id="timerFill"></div></div>
+    <h2 id="qText"></h2>
+    <div id="options" class="options"></div>
+    <p id="answerMsg" class="hint"></p>
+    <h3>Leaderboard</h3>
+    <ol id="board"></ol>
+  </section>
+
+  <!-- Final -->
+  <section id="finalView" class="panel hidden">
+    <h2>Final standings</h2>
+    <ol id="finalBoard"></ol>
+    <button id="backBtn">Back to lobby</button>
+  </section>
+</main>
+
+<script src="signalr-mini.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
