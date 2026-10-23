@@ -1,5 +1,9 @@
 # QuizArena
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-8.0-512BD4)](src/QuizArena.Api)
+[![SignalR](https://img.shields.io/badge/realtime-SignalR-3B82F6)](src/QuizArena.Api/Hubs)
+
 ![QuizArena banner](docs/banner.png)
 
 A realtime multiplayer quiz game: create a room, share the 6-character code, and race your friends
